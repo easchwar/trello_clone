@@ -15,8 +15,7 @@ TrelloClone.Collections.Boards = Backbone.Collection.extend({
     // on successful fetch, add it to the collection (ignore if already present)
     board.fetch({
       success: function() {
-        debugger
-        this.add(board, {merge: false});  
+        this.add(board, {merge: false});
       }.bind(this)
     });
     return board;
