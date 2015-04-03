@@ -4,6 +4,8 @@ window.TrelloClone = {
   Views: {},
   Routers: {},
   initialize: function() {
+    console.log('hi');
+    // Backbone.history.start();
   }
 };
 
