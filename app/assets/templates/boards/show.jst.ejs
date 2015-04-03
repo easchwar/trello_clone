@@ -1,7 +1,7 @@
 <h2><%= board.escape('title') %></h2>
 
-<ul class="list-group">
+<div class="row">
   <% board.lists().each(function(list) { %>
-    <li class="list-group-item"> <%= list.escape('title') %></li>
+    <div class="col-md-4"> <%= list.escape('title') %></div>
   <% }) %>
-</ul>
+</div>

@@ -11,7 +11,7 @@ TrelloClone.Models.Board = Backbone.Model.extend({
   parse: function(payload) {
     if (payload.lists) {
       // extract list data from payload
-      this.lists().set(payload.lists);
+      this.lists().set(payload.lists, {parse: true});
       delete payload.lists;
 
       //set board association for each list
