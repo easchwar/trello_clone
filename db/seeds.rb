@@ -1,3 +1,8 @@
+User.destroy_all
+Board.destroy_all
+List.destroy_all
+Card.destroy_all
+
 u1 = User.create(email: 'ripe@gmail.com', password: 'password')
 u2 = User.create(email: 'thejamaicandave@gmail.com', password: 'password')
 
@@ -5,13 +10,13 @@ b1 = u1.boards.create(title: 'Workout')
 b2 = u1.boards.create(title: 'Jamaica')
 b3 = u2.boards.create(title: 'Bouncy')
 
-l1 = b1.lists.create(title: 'todo')
-l2 = b1.lists.create(title: 'doing')
-l3 = b1.lists.create(title: 'done')
+l1 = b1.lists.create(title: 'todo', ord: 1)
+l2 = b1.lists.create(title: 'doing', ord: 2)
+l3 = b1.lists.create(title: 'done', ord: 3)
 
-c1 = l3.cards.create(title: 'squats', description: 'feel the burn')
-c2 = l3.cards.create(title: 'pushups', description: 'ooh ouch')
-c3 = l3.cards.create(title: 'situps', description: 'ouchy')
+c1 = l3.cards.create(title: 'squats', description: 'feel the burn', ord: 1)
+c2 = l3.cards.create(title: 'pushups', description: 'ooh ouch', ord: 2)
+c3 = l3.cards.create(title: 'situps', description: 'ouchy', ord: 3)
 
 c4 = l1.cards.create(title: 'squats', description: 'feel the burn')
 c5 = l1.cards.create(title: 'pushups', description: 'ooh ouch')
