@@ -7,6 +7,6 @@ json.extract! @board, :id, :title, :created_at, :updated_at
 
 json.lists do
   json.array!(@board.lists) do |list|
-    json.extract! list, :id, :board_id, :title, :ord, :created_at, :updated_at
+    json.partial! 'lists/show', list: list
   end
 end
