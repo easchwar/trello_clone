@@ -1,9 +1,7 @@
-<h2><%= list.escape('title') %></h2>
+<h2><%= list.escape('title') %>: ord-<%= list.get('ord') %></h2>
 
-<div class="col-md-4">
-  <ul class="list-group">
-    <% list.cards().each(function(card) { %>
-      <li class="list-group-item"> <%= card.escape('title') %></li>
-      <% }) %>
-  </ul>
-</div>
+<ul class="list-group">
+  <% list.cards().each(function(card) { %>
+    <li class="list-group-item"> <%= card.escape('title') %>: id-<%= card.id %></li>
+    <% }) %>
+</ul>
