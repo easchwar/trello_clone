@@ -24,7 +24,9 @@ TrelloClone.Views.BoardForm = Backbone.View.extend({
     board.save({}, {
       success: function() {
         this.collection.add(board);
+        Backbone.history.navigate("/boards/" + board.id, {trigger: true});
       }.bind(this)
     });
+    return board;
   },
 });
