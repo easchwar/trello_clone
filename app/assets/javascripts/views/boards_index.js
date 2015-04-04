@@ -10,6 +10,11 @@ TrelloClone.Views.BoardsIndex = Backbone.View.extend({
     this._form = new TrelloClone.Views.BoardForm({collection: this.collection});
   },
 
+  remove: function() {
+    this._form.remove();
+    Backbone.View.prototype.remove.call(this);
+  },
+
   render: function() {
     var content = this.template({boards: this.collection});
     this.$el.html(content);
