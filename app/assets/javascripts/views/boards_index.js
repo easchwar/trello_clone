@@ -24,5 +24,6 @@ TrelloClone.Views.BoardsIndex = Backbone.View.extend({
   boardForm: function() {
     console.log('button press');
     this.$('.button-create').replaceWith(this._form.render().$el);
+    this.$('.form-horizontal input').focus();
   },
 });
