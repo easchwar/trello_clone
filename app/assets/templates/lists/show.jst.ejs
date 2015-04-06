@@ -2,7 +2,10 @@
 
 <ul class="list-group">
   <% list.cards().each(function(card) { %>
-    <li class="list-group-item hoverable"> <%= card.escape('title') %>: id-<%= card.id %></li>
+    <li class="list-group-item hoverable">
+      <%= card.escape('title') %>: id-<%= card.id %>
+      <button class="card-delete btn btn-xs btn-default">X</button>
+      </li>
     <% }) %>
   <li class="list-group-item form"></li>
   <li class="list-group-item">
