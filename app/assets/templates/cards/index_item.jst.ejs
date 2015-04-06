@@ -1,4 +1,2 @@
-<li class="list-group-item hoverable">
-  <%= card.escape('title') %>: id-<%= card.id %>
-  <button class="card-delete btn btn-xs btn-default">X</button>
-</li>
+<%= card.escape('title') %>: id-<%= card.id %>, ord-<%= card.get('ord') %>
+<button class="card-delete btn btn-xs btn-default">X</button>
