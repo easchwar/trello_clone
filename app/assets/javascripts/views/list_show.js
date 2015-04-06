@@ -31,7 +31,7 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
     });
   },
 
-  removeSubViews: function() {
+  removeSubviews: function() {
     if (this._cardForm) {
       this._cardForm.remove();
     }
@@ -53,7 +53,7 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
     this.$el.html(content);
 
     // clean up old subviews
-    this.removeSubViews();
+    this.removeSubviews();
 
     // add subviews
     this.addFormView();
