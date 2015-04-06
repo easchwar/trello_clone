@@ -22,3 +22,8 @@
   border-radius: 6px;
   background: #eee;
 }
+
+.hoverable:hover {
+  background: #bbf;
+  cursor: pointer;
+}
