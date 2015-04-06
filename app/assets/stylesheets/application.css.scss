@@ -30,4 +30,10 @@
 
 .card-delete {
   float: right;
+  display: none;
+}
+
+.list-group-item:hover > .card-delete {
+  float: right;
+  display: block;
 }
