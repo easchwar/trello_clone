@@ -26,7 +26,16 @@ TrelloClone.Views.ListForm = Backbone.View.extend({
     event.preventDefault();
     var list = new TrelloClone.Models.List(this.$el.serializeJSON());
 
-    list.set('ord', this.collection.length + 1);
+    var ords = this.collection.pluck('ord');
+    var maxOrd = 0;
+
+    ords.forEach(function(ord) {
+      if (ord > maxOrd) { maxOrd = ord; }
+    });
+
+    maxOrd++;
+
+    list.set('ord', maxOrd);
     list._board = this.board;
     list.set('board_id', this.board.id);
 
