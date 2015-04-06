@@ -10,7 +10,7 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
   initialize: function() {
     this._subviews = [];
     this.listenTo(this.model, 'sync', this.render);
-    this.listenTo(this.model.cards(), 'add remove', this.render);
+    this.listenTo(this.model.cards(), 'add remove change:title', this.render);
   },
 
   addFormView: function() {
@@ -41,6 +41,11 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
 
     this._subviews = [];
     this._cardForm = null;
+  },
+
+  remove: function() {
+    this.removeSubviews();
+    Backbone.View.prototype.remove.call(this);
   },
 
   render: function() {
