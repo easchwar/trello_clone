@@ -28,7 +28,6 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
     $div.sortable({
       deactivate: function() {
         this.resort($div);
-        // console.log($div.children());
       }.bind(this)
     });
     this.model.cards().each(function(card) {

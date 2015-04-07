@@ -16,7 +16,7 @@ TrelloClone.Views.BoardShow = Backbone.View.extend({
       subview.remove();
     });
     this._form.remove();
-    
+
     this._listSubViews = [];
     this._form = null;
   },
