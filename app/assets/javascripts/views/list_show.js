@@ -25,9 +25,25 @@ TrelloClone.Views.ListShow = Backbone.View.extend({
 
   addIndexItems: function () {
     var $div = this.$('div.index-items');
+    $div.sortable({
+      deactivate: function() {
+        this.resort($div);
+        // console.log($div.children());
+      }.bind(this)
+    });
     this.model.cards().each(function(card) {
       var view = new TrelloClone.Views.CardIndexItem({model: card});
       $div.append(view.render().$el);
+
+    });
+  },
+
+  resort: function($div) {
+    var $items = $div.children();
+    $items.each(function(i) {
+      var id = $(this).data('id');
+      var sortedCard = new TrelloClone.Models.Card({id: id});
+      sortedCard.save({ord: i});
     });
   },
 
